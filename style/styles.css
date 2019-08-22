@@ -1,0 +1,14 @@
+body {
+    background-color: Green;
+    list-style: none;
+    color:Purple;
+}
+body a {
+    color: #0000ff;
+    text-decoration: none;
+}
+nav li {
+    display: inline;
+    padding-left:20px;
+    text-align:right;
+}

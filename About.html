@@ -1,18 +1,38 @@
 <html>
     <head>
-        <title>About Me</title>
         <link rel="stylesheet" href="./style/styles.css">
-        <link rel="icon" type=image/jpg href="./img/tog.jpg"
+        <link rel="icon" type=image/jpg href="./img/tog.jpg">
+    <style>
+        .dropdown{
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right:1px;
+  background-color: purple;
+  min-width: 125px;
+  box-shadow: 100px 8px 16px 0px rgba(0,0,0,0.2);
+  padding:12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
     </head>
-    <body>
-        <nav align=right>
-        <ul id="Pages">
-            <li> <a href="index.html">Home Page</a></li>
-            <li><a href="Portfolio.html">Portfolio</a></li>
-            <li><a href="About.html">About Me</a></li>
-        </ul>
-        </nav>
-        <h1>Who am I</h1>
+    <body align=right>
+  <div class="dropdown">
+  <span>About Me</span>
+      <div class="dropdown-content">
+          <a href="index">Home Page</a>
+          <br>
+          <a href="portfolio">Portfolio</a>
+      </div>
+  </div>
+        <h1 align=center>Who am I</h1>
         <p align=center>
             I am a senior who goes to Citrus Valley High School.<br> 
             I am taking Computer Science Class.<br>
@@ -20,48 +40,43 @@
                 <a href="https://myanimelist.net/animelist/ThatsDisrespect">
                 <img src=./img/InitialD.jpg width = 250>
                 </a>
-            <ol align=center>
+                <div align=center>
+                <br>
                 My top ten favorite games 
-                <li align=center>
+                <br>
                     Rainbow Six Siege
-                </li>
-                <li align=center>
+                <br>
                     Halo Series
-                </li>
-                <li align=center>
+                <br>
                     Life is Strange
-                </li>
-                <li align=center>
+                <br>
                     Gta 5
-                </li>
-                <li align=center>
+                <br>
                     Sea of Thieves
-                </li>
-                <li align=center>
+                <br>
                     Tomb Raider
-                </li>
-                <li align=center>
+                <br>
                     Assassin's Creed Series
-                </li>
-                <li align=center>
+                <br>
                     Celeste
-                </li>
-                <li align=center>
+                <br>
                     Jump Force
-                </li>
-                <li align=center>
+                <br>
                     Fifa Games
-                </li>
-            </ol> 
-            <img  text=center src=./img/Rikka.gif>
+                <br>
+                </div>
+                <p align=center>
+            <img src="./img/Rikka.gif">
             <br>
-            <iframe align=center width="400" height="200" 
+            <iframe width="400" height="200" 
             src="https://www.youtube.com/embed/tLyRpGKWXRs" 
             frameborder="0" 
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen;>
             </iframe>
+            </p>
         </p>
-        
+        <style> 
+        </style>
     </body>
 </html>

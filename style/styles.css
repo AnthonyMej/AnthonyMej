@@ -1,13 +1,17 @@
 body {
-    background-color: Grey;
-    list-style: none;
-    color:Purple;
+  background-color: Grey;
+  list-style: none;
+  color:Purple;
 }
 body a {
-    color: #0000ff;
-    text-decoration: none;
+  color: #0000ff;
+  text-decoration: none;
 }
 nav li{
-    display:inline;
-    padding-left:20px;
+  display:inline;
+  padding-left:20px;
+}
+.responsive {
+  max-width: 100%;
+  height: auto;
 }

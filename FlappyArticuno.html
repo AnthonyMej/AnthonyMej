@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="./style/styles.css">
+        <link rel="icon" type=image/jpg href="./img/tog.jpg">
+        <script type="text/javascript" src="js/processing.js"></script>
+<style>
+        .dropdown{
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right:1px;
+  background-color: purple;
+  min-width: 125px;
+  box-shadow: 100px 8px 16px 0px rgba(0,0,0,0.2);
+  padding:12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+    </head>
+    <body>
+        <script type="text/processing"> 
+//Put your Processing Code here!
+      //varibles
+PImage bg;
+int bgx,birdX,birdY,g,VbirdY;
+PImage bird;
+PImage Uppipe, pipe;
+int [] pipeX, pipeY;
+
+
+
+//setup
+void setup(){
+ size (800,800);
+ gamestate = 0;
+ bg = loadImage("./img/bg.png");
+ bird = loadImage("./img/bird.png");
+ pipe = loadImage("./img/pipe.png");
+ Uppipe = loadImage("./img/Uppipe.png");
+ birdX = 100;
+ birdY = 300;
+ g = 1;         
+ pipeX= new int[5]; //[0,0,0,0]
+ pipeY= new int[pipeX.length];
+ for(int i =0; i < pipeX.length; i++){
+ pipeX[i] = 200*i;
+ pipeY[i]= (int)random(-150, 0);
+ }
+}
+
+void draw(){
+ setBg();
+ image(bird,birdX,birdY);
+ birdY = birdY + VbirdY;
+ VbirdY = VbirdY + g ;
+}
+  for(int i =0; i < pipeX.length; i++){
+ image(Uppipe, pipeX[i] , pipeY[i]);
+ image(pipe, pipeX[i] , pipeY[i] + 680);
+ pipeX[i]-= 2;
+ if(pipeX[i] < -200){
+  pipeX[i] = width; 
+   
+ }
+ }
+}
+
+void keyPressed(){
+   if (key == ' '){
+     VbirdY = -15;
+  }
+}
+
+void setBg(){
+   image(bg, bgx, 0);
+  image(bg,bgx + bg.width,0);
+  bgx= bgx -5;
+  if (bgx < -bg.width)
+  {
+    bgx = 0;
+  }
+  
+}
+</script>
+<canvas id="sketch" style="border: 1px solid black;"></canvas>
+    </body>
+</html>

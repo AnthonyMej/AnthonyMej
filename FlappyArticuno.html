@@ -30,6 +30,7 @@
         <script type="text/processing"> 
 //Put your Processing Code here!
       //varibles
+//varibles
 PImage bg;
 int bgx,birdX,birdY,g,VbirdY;
 PImage bird;
@@ -41,7 +42,6 @@ int [] pipeX, pipeY;
 //setup
 void setup(){
  size (800,800);
- gamestate = 0;
  bg = loadImage("./img/bg.png");
  bird = loadImage("./img/bird.png");
  pipe = loadImage("./img/pipe.png");
@@ -56,38 +56,42 @@ void setup(){
  pipeY[i]= (int)random(-150, 0);
  }
 }
-
 void draw(){
  setBg();
+ setPipes();
+ setBird();
+}
+
+void setBird(){
  image(bird,birdX,birdY);
  birdY = birdY + VbirdY;
  VbirdY = VbirdY + g ;
 }
+
+    
+void setPipes(){
   for(int i =0; i < pipeX.length; i++){
  image(Uppipe, pipeX[i] , pipeY[i]);
  image(pipe, pipeX[i] , pipeY[i] + 680);
  pipeX[i]-= 2;
  if(pipeX[i] < -200){
   pipeX[i] = width; 
-   
- }
- }
+}
+}
 }
 
-void keyPressed(){
-   if (key == ' '){
+void mousePressed(){
      VbirdY = -15;
   }
-}
 
 void setBg(){
-   image(bg, bgx, 0);
+ 
   image(bg,bgx + bg.width,0);
   bgx= bgx -5;
-  if (bgx < -bg.width)
+   if(bgx < -bg.width)
   {
-    bgx = 0;
-  }
+     bgx = 0; 
+  }  
   
 }
 </script>
